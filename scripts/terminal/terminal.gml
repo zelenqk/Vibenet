@@ -1,4 +1,4 @@
-function debugger() constructor{
+function terminal() constructor{
 	logs = [];
 	
 	x = 100;

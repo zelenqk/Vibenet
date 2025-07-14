@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"connectionFixing",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"connectionFixing",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

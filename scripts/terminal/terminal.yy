@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"debugger",
+  "%Name":"terminal",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"debugger",
+  "name":"terminal",
   "parent":{
     "name":"Scripts",
     "path":"folders/Scripts.yy",
