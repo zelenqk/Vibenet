@@ -41,9 +41,8 @@ function error(code, description = ""){
 function mainserver_errors(code, description){
 	switch (code){
 	case "CU":
-		var retry = show_question("Connection to main server was unsuccesfull. Try again?");
-		
-		if (retry) connect();
+		var err = "Connection to main server was unsuccesfull";
+		console.log(err, c_red);
 		break;
 	}
 }
@@ -51,7 +50,7 @@ function mainserver_errors(code, description){
 function punchsocket_errors(code, description){
 	switch (code){
 	case "US":
-		show_debug_message("Unknown socket " + string(description) + " is not part of p2p loopback");
+		console.log("Unknown socket " + string(description) + " is not part of p2p loopback");
 		break;
 	}
 }

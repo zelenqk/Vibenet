@@ -39,7 +39,7 @@ function main() constructor{
 		send(buffer);
 		buffer_delete(buffer);
 		
-		oTextbox.messages.add("started looking for lobby");
+		console.log("started looking for lobby");
 	}
 	
 	step = function(){
@@ -91,7 +91,7 @@ function main() constructor{
 		case 0x01:	//lobby found
 			var clients = buffer_read(buffer, buffer_u8);
 			var tag = buffer_read(buffer, buffer_string);
-			oTextbox.messages.add("joined lobby - " + tag);
+			console.log("joined lobby - " + tag);
 			
 			repeat (clients){
 				var ip = buffer_read(buffer, buffer_string);
@@ -104,11 +104,11 @@ function main() constructor{
 			var ip = buffer_read(buffer, buffer_string);
 			var port = buffer_read(buffer, buffer_u16);
 			
-			oTextbox.messages.add("socket " + ip + ":" + string(port) + " has joined the lobby");
+			console.log("socket " + ip + ":" + string(port) + " has joined the lobby");
 			punch.add(ip, port);
 			break;
 		case 0x05:	//lobby is full
-			oTextbox.messages.add("Lobby is full");
+			console.log("Lobby is full");
 			break;
 		case 0xFF:
 			punch.onData(buffer, true);
@@ -218,7 +218,7 @@ function puncher() constructor{
 			var ip = async_load[? "ip"];
 			var port = async_load[? "port"];
 			var sock = ip + " / " + string(port);
-			oTextbox.messages.add("Hole punch success (" + sock + ") Attempting to establish connection")
+			console.log("Hole punch success (" + sock + ") Attempting to establish connection")
 			
 			var ping =	buffer_create(1, buffer_fixed, 1);
 						buffer_write(ping, buffer_u8, 0x01);
@@ -229,7 +229,7 @@ function puncher() constructor{
 			var ip = async_load[? "ip"];
 			var port = async_load[? "port"];
 			var sock = ip + " / " + string(port);
-			oTextbox.messages.add("Client " + sock + " successfully established connection!");
+			console.log("Client " + sock + " successfully established connection!");
 			
 			var con = connections.sockets[$ sock];
 			if (con != undefined and con != -1){
